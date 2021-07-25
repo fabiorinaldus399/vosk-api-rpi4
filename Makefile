@@ -54,7 +54,6 @@ endif
 ifeq ($(HAVE_OPENBLAS), 1)
 LIBS += \
 	$(OPENBLAS_ROOT)/lib/libopenblas.a \
-	$(OPENBLAS_ROOT)/lib/liblapack.a \
 	$(OPENBLAS_ROOT)/lib/libblas.a \
 	$(OPENBLAS_ROOT)/lib/libf2c.a
 endif
