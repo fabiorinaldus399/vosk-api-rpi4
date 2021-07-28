@@ -38,8 +38,8 @@ LIBS= \
 	$(KALDI_ROOT)/src/fstext/kaldi-fstext.a \
 	$(KALDI_ROOT)/src/util/kaldi-util.a \
 	$(KALDI_ROOT)/src/base/kaldi-base.a \
-	$(OPENFST_ROOT)/lib/libfst.la \
-	$(OPENFST_ROOT)/lib/libfstngram.la
+	$(OPENFST_ROOT)/lib/libfst.a \
+	$(OPENFST_ROOT)/lib/libfstngram.a
 
 
 ifeq ($(HAVE_OPENBLAS_CLAPACK), 1)
