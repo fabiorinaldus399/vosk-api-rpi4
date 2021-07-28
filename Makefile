@@ -18,7 +18,7 @@ VOSK_SOURCES= \
 	vosk_api.cc
 
 CFLAGS=-g -O2 -std=c++17 -fPIC -DFST_NO_DYNAMIC_LINKING $(EXTRA_CFLAGS) \
-	-I. -I$(KALDI_ROOT)/src -I$(OPENFST_ROOT)/include #-I$(OPENBLAS_ROOT)/include
+	-I. -I$(KALDI_ROOT)/src -I$(OPENFST_ROOT)/include -I$(OPENBLAS_ROOT)/include
 
 LIBS= \
 	$(KALDI_ROOT)/src/online2/kaldi-online2.a \
