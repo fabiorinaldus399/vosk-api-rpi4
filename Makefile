@@ -6,7 +6,6 @@ CUDA_ROOT?=/usr/local/cuda
 EXT?=so
 CXX?=g++
 HAVE_OPENBLAS_CLAPACK=0
-HAVE_OPENBLAS=1
 HAVE_ACCELERATE=0
 EXTRA_CFLGAS?=
 EXTRA_LDFLAGS?=
@@ -19,7 +18,7 @@ VOSK_SOURCES= \
 	vosk_api.cc
 
 CFLAGS=-g -O2 -std=c++17 -fPIC -DFST_NO_DYNAMIC_LINKING $(EXTRA_CFLAGS) \
-	-I. -I$(KALDI_ROOT)/src -I$(OPENFST_ROOT)/include -I$(OPENBLAS_ROOT)/include
+	-I. -I$(KALDI_ROOT)/src -I$(OPENFST_ROOT)/include #-I$(OPENBLAS_ROOT)/include
 
 LIBS= \
 	$(KALDI_ROOT)/src/online2/kaldi-online2.a \
@@ -51,12 +50,6 @@ LIBS += \
 	$(OPENBLAS_ROOT)/lib/libf2c.a
 endif
 
-ifeq ($(HAVE_OPENBLAS), 1)
-LIBS += \
-	$(OPENBLAS_ROOT)/lib/libopenblas.a \
-	$(OPENBLAS_ROOT)/lib/libblas.a \
-	$(OPENBLAS_ROOT)/lib/libf2c.a
-endif
 
 ifeq ($(HAVE_ACCELERATE), 1)
 LIBS += \
